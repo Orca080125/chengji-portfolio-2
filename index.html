@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chengji Song | Engineering Portfolio</title>
+<meta name="description" content="Chengji Song — Engineering portfolio covering robotics, embedded systems, AI and marine technology projects.">
+
+<meta property="og:title" content="Chengji Song | Engineering Portfolio">
+<meta property="og:description" content="Robotics · Artificial Intelligence · Embedded Systems">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#140021">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c026d3'/%3E%3Cstop offset='1' stop-color='%236366f1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='900' font-size='28' fill='white' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav>
+  <div class="logo">Chengji Song</div>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About<span class="zh"> 关于</span></a>
+    <a href="#education">Education<span class="zh"> 教育</span></a>
+    <a href="#skills">Skills<span class="zh"> 技能</span></a>
+    <a href="#achievement">Achievement<span class="zh"> 成绩</span></a>
+    <a href="#projects">Projects<span class="zh"> 项目</span></a>
+    <a href="#research">Research<span class="zh"> 科研</span></a>
+    <a href="#leadership">Leadership<span class="zh"> 领导力</span></a>
+    <a href="#contact">Contact<span class="zh"> 联系</span></a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="floating-circle circle1"></div>
+  <div class="floating-circle circle2"></div>
+  <div class="floating-circle circle3"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="hero-inner">
+    <div class="eyebrow reveal">Engineering Portfolio · 工程创新作品集</div>
+
+    <h1>Chengji Song</h1>
+
+    <p class="tagline">Robotics · Artificial Intelligence · Embedded Systems<br>
+    <span class="zh">机器人 · 人工智能 · 嵌入式系统</span></p>
+
+    <div class="motto">
+      "Engineering the future through curiosity and creativity."<br>
+      <span class="zh">"以好奇探索未来，以工程创造可能。"</span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="button" href="#projects">Explore My Work <span class="zh">探索我的作品</span></a>
+      <a class="button ghost" href="#contact">Get In Touch <span class="zh">联系我</span></a>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#about" aria-label="Scroll down">
+    <svg width="20" height="32" viewBox="0 0 20 32" fill="none"><rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" stroke-opacity=".5"/><circle class="scroll-dot" cx="10" cy="10" r="3" fill="currentColor"/></svg>
+  </a>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="kicker reveal">01 · Who I Am</div>
+  <h2 class="title reveal">About Me <span class="zh">关于我</span></h2>
+
+  <div class="about-grid">
+    <p class="text reveal">
+      I am an engineering student passionate about robotics, embedded systems, artificial intelligence, and emerging technologies.
+      <br><br>
+      <span class="zh">我是一名热爱机器人、嵌入式系统、人工智能以及前沿科技的工程学习者。</span>
+      <br><br>
+      Driven by curiosity and creativity, I enjoy transforming ideas into real-world engineering solutions through hardware design, software development, and interdisciplinary exploration.
+      <br><br>
+      <span class="zh">我喜欢将想法转化为现实中的工程解决方案，通过硬件设计、软件开发以及跨学科探索，创造具有实际价值的技术作品。</span>
+    </p>
+
+    <div class="about-side reveal">
+      <div class="side-card">
+        <div class="side-label">Personality <span class="zh">人格类型</span></div>
+        <div class="side-value">ENFP</div>
+        <p>Energetic, open-minded, and always curious about new possibilities.<br><span class="zh">充满热情、乐于探索未知，并持续寻找新的可能。</span></p>
+      </div>
+      <div class="side-card">
+        <div class="side-label">Beyond Engineering <span class="zh">兴趣爱好</span></div>
+        <div class="hobby-tags">
+          <span>Skiing 滑雪</span><span>Kart Racing 卡丁车</span><span>Calligraphy 书法</span><span>Emerging Tech 前沿科技</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="kicker reveal">02 · Academic Path</div>
+  <h2 class="title reveal">Education <span class="zh">教育经历</span></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="year">2026 – Present</div>
+      <div class="content">
+        <h3>Carnegie Mellon University</h3>
+        <h4><span class="zh">卡耐基梅隆大学</span></h4>
+        <p>Admission Offer <span class="zh">· 本科录取</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="year">2026</div>
+      <div class="content">
+        <h3>Shanghai Jiao Tong University</h3>
+        <h4><span class="zh">上海交通大学</span></h4>
+        <p>Admission Offer <span class="zh">· 本科录取</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="year">2026</div>
+      <div class="content">
+        <h3>National University of Singapore</h3>
+        <h4><span class="zh">新加坡国立大学</span></h4>
+        <p>Admission Offer <span class="zh">· 本科录取</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="year">2023 – 2026</div>
+      <div class="content">
+        <h3>Dalian No.24 High School</h3>
+        <h4><span class="zh">大连市第二十四中学</span></h4>
+        <p>High School Education <span class="zh">· 高中阶段学习</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="year">2020 – 2023</div>
+      <div class="content">
+        <h3>The School Attached to Dalian Maritime University</h3>
+        <h4><span class="zh">大连海事大学附属学校</span></h4>
+        <p>Primary &amp; Junior High School Education <span class="zh">· 小学及初中阶段学习</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills Galaxy -->
+<section id="skills">
+  <div class="kicker reveal">03 · Toolkit</div>
+  <h2 class="title reveal">Skills Galaxy <span class="zh">技能星球</span></h2>
+
+  <div class="skills-orbit reveal">
+    <div class="skill center">Engineering<br><span class="zh">工程</span></div>
+    <div class="orbit">
+      <div class="skill"><span>Python</span></div>
+      <div class="skill"><span>C++</span></div>
+      <div class="skill"><span>Robotics</span><br><span class="zh">机器人</span></div>
+      <div class="skill"><span>ESP32</span></div>
+      <div class="skill"><span>CAD</span></div>
+      <div class="skill"><span>COMSOL</span></div>
+      <div class="skill"><span>Machine Learning</span><br><span class="zh">机器学习</span></div>
+      <div class="skill"><span>Embedded Systems</span><br><span class="zh">嵌入式</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievement -->
+<section id="achievement">
+  <div class="kicker reveal">04 · By the Numbers</div>
+  <h2 class="title reveal">Academic Achievement <span class="zh">学术成绩</span></h2>
+
+  <div class="cards">
+    <div class="card reveal">
+      <h3>SAT</h3>
+      <p class="score">1550</p>
+      <p>Standardized Test <span class="zh">· 美国大学入学考试</span></p>
+    </div>
+
+    <div class="card reveal">
+      <h3>TOEFL</h3>
+      <p class="score" data-target="119" data-suffix=" / 120">119 / 120</p>
+      <p>Single-Test High 119 · Superscore 120 <span class="zh">· 单次最高119 · 拼分最高120</span></p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Gaokao</h3>
+      <p class="score">687</p>
+      <p>National College Entrance Examination <span class="zh">· 中国高考成绩</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="kicker reveal">05 · Selected Work</div>
+  <h2 class="title reveal">Projects <span class="zh">工程项目</span></h2>
+
+  <div class="cards">
+
+    <div class="card project-card reveal">
+      <div class="tags">ESP32 · LoRa · IoT</div>
+      <h3>WeatherAlert Button</h3>
+      <p>Marine emergency alert system.<br><span class="zh">海洋环境智能预警设备。</span></p>
+    </div>
+
+    <div class="card project-card reveal">
+      <div class="tags">Python · Deep Learning · Computer Vision</div>
+      <h3>AI Whale Identification</h3>
+      <p>AI-based humpback whale identification system.<br><span class="zh">基于人工智能的座头鲸识别系统。</span></p>
+      <a href="https://github.com/Orca080125/humpback_whale_identification" target="_blank" rel="noopener">View GitHub → <span class="zh">查看代码</span></a>
+    </div>
+
+    <div class="card project-card reveal">
+      <div class="tags">GIS · Web Development</div>
+      <h3>Ocean Plastic Monitoring System</h3>
+      <p>Global ocean pollution visualization platform.<br><span class="zh">全球海洋塑料污染可视化平台。</span></p>
+      <a href="https://micro-plastic-map.vercel.app" target="_blank" rel="noopener">View Website → <span class="zh">访问网站</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Research -->
+<section id="research">
+  <div class="kicker reveal">06 · Research</div>
+  <h2 class="title reveal">Research <span class="zh">科研经历</span></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="year">2025</div>
+      <div class="content">
+        <h3>Embedded Systems and Robotics</h3>
+        <h4>UPenn ESAP</h4>
+        <p>Robotic hardware design, embedded firmware, CAD modeling, and mechanical integration.<br>
+        <span class="zh">机器人硬件设计、嵌入式开发、CAD建模以及机械系统集成。</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="year">2023 – 2025</div>
+      <div class="content">
+        <h3>Microfluidics Laboratory</h3>
+        <h4>Dalian Maritime University <span class="zh">大连海事大学</span></h4>
+        <p>Research on microfluidic technologies, including microchip fabrication, PDMS-based devices, and marine sensing applications.<br>
+        <span class="zh">参与微流控相关研究，包括微流控芯片制造、PDMS软光刻技术以及海洋传感应用。</span></p>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0924424725000822" target="_blank" rel="noopener">View Publication → <span class="zh">查看论文</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Leadership -->
+<section id="leadership">
+  <div class="kicker reveal">07 · Beyond the Lab</div>
+  <h2 class="title reveal">Leadership <span class="zh">领导力经历</span></h2>
+
+  <div class="cards">
+
+    <div class="card leadership-card reveal">
+      <h3>Student Union Vice President</h3>
+      <h4><span class="zh">学生会副主席</span> · 2024 – 2025</h4>
+      <p>Served as Vice President of the Student Union, leading student activities and campus initiatives.<br>
+      <span class="zh">担任学生会副主席，负责校园活动组织、学生事务协调以及大型活动策划。</span></p>
+      <div class="lead-number">Leadership</div>
+    </div>
+
+    <div class="card leadership-card reveal">
+      <h3>Founder &amp; Chair</h3>
+      <h4>Student Club Federation <span class="zh">社团联合会创始主席</span></h4>
+      <p>Founded the first Student Club Federation, connecting 43 clubs and more than 1,800 participants.<br>
+      <span class="zh">创建首届社团联合会，整合43个学生社团，覆盖1800+名学生。</span></p>
+      <div class="lead-number">43 Clubs · 1800+</div>
+    </div>
+
+    <div class="card leadership-card reveal">
+      <h3>Club Carnival Organizer</h3>
+      <h4><span class="zh">校园社团嘉年华</span></h4>
+      <p>Designed and organized a large-scale campus event to promote student engagement.<br>
+      <span class="zh">策划并组织校园社团嘉年华，促进学生交流与校园文化建设。</span></p>
+      <div class="lead-number">Event Design</div>
+    </div>
+
+    <div class="card leadership-card reveal">
+      <h3>Technology &amp; Innovation</h3>
+      <h4><span class="zh">技术创新项目</span></h4>
+      <p>Designed a WeChat Mini Program to improve student organization management.<br>
+      <span class="zh">设计开发微信小程序，提升学生组织管理效率。</span></p>
+      <div class="lead-number">Product Dev</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="kicker reveal">08 · Say Hello</div>
+  <h2 class="title reveal">Contact <span class="zh">联系</span></h2>
+
+  <div class="contact-grid reveal">
+    <a class="contact-card" href="mailto:Chengjisong2026@163.com">
+      <div class="contact-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 6 10-6"/></svg>
+      </div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">Chengjisong2026@163.com</div>
+    </a>
+
+    <a class="contact-card" href="tel:+8615041160872">
+      <div class="contact-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
+      </div>
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">+86 150 4116 0872</div>
+    </a>
+
+    <div class="contact-card no-link">
+      <div class="contact-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      </div>
+      <div class="contact-label">Location</div>
+      <div class="contact-value">Dalian, China <span class="zh">大连，中国</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/orca080125" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
+    </a>
+    <a href="mailto:Chengjisong2026@163.com" aria-label="Email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 6 10-6"/></svg>
+    </a>
+  </div>
+  <div>© 2026 Chengji Song · Engineering Portfolio</div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
