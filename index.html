@@ -20,13 +20,14 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#about">Skip to content · 跳转至正文</a>
 
 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
 <nav>
-  <div class="logo">Chengji Song</div>
+  <a class="logo" href="#home" aria-label="Chengji Song — Home"><span class="logo-mark" aria-hidden="true">✳</span> Chengji Song<span class="logo-dot">.</span></a>
 
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
 
@@ -43,16 +44,17 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero">
+<main>
+<section class="hero" id="home">
   <div class="floating-circle circle1"></div>
   <div class="floating-circle circle2"></div>
   <div class="floating-circle circle3"></div>
   <div class="grid-overlay"></div>
 
   <div class="hero-inner">
-    <div class="eyebrow reveal">Engineering Portfolio · 工程创新作品集</div>
+    <div class="eyebrow reveal"><span class="status-dot" aria-hidden="true"></span> Engineering Portfolio <span class="eyebrow-divider">/</span> <span class="zh">工程创新作品集</span></div>
 
-    <h1>Chengji Song</h1>
+    <h1 aria-label="Chengji Song"><span>CHENGJI</span><span class="surname">SONG<span class="name-star" aria-hidden="true">✳</span></span></h1>
 
     <p class="tagline">Robotics · Artificial Intelligence · Embedded Systems<br>
     <span class="zh">机器人 · 人工智能 · 嵌入式系统</span></p>
@@ -63,21 +65,31 @@
     </div>
 
     <div class="hero-actions">
-      <a class="button" href="#projects">Explore My Work <span class="zh">探索我的作品</span></a>
-      <a class="button ghost" href="#contact">Get In Touch <span class="zh">联系我</span></a>
+      <a class="button" href="#projects"><span>Explore My Work <span class="zh">探索我的作品</span></span><span class="button-arrow" aria-hidden="true">↗</span></a>
+      <a class="button ghost" href="#contact"><span>Get In Touch <span class="zh">联系我</span></span><span aria-hidden="true">↗</span></a>
     </div>
   </div>
 
+  <div class="hero-object" aria-hidden="true">
+    <div class="object-cross cross-one">+</div><div class="object-cross cross-two">+</div>
+    <div class="object-orbit"></div>
+    <img src="assets/orbital-form.svg" alt="" width="640" height="640" fetchpriority="high">
+    <span class="object-label">FIG. 01 &nbsp; / &nbsp; CURIOSITY IN MOTION</span>
+    <span class="object-coordinate">X 38.9° &nbsp; Y 121.6°</span>
+  </div>
+  <div class="hero-bottom"><span>IDEAS → SYSTEMS → IMPACT</span><span>BASED IN DALIAN, CHINA <span class="status-dot" aria-hidden="true"></span></span></div>
   <a class="scroll-cue" href="#about" aria-label="Scroll down">
     <svg width="20" height="32" viewBox="0 0 20 32" fill="none"><rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" stroke-opacity=".5"/><circle class="scroll-dot" cx="10" cy="10" r="3" fill="currentColor"/></svg>
   </a>
 </section>
 
+<div class="discipline-strip" aria-hidden="true"><div class="discipline-track"><span>ROBOTICS <i>✳</i> ARTIFICIAL INTELLIGENCE <i>✳</i> EMBEDDED SYSTEMS <i>✳</i> MARINE TECHNOLOGY <i>✳</i></span><span>ROBOTICS <i>✳</i> ARTIFICIAL INTELLIGENCE <i>✳</i> EMBEDDED SYSTEMS <i>✳</i> MARINE TECHNOLOGY <i>✳</i></span></div></div>
 <!-- About -->
 <section id="about">
   <div class="kicker reveal">01 · Who I Am</div>
   <h2 class="title reveal">About Me <span class="zh">关于我</span></h2>
 
+  <div class="section-note reveal">A curious mind.<br><span>Engineering possibilities.</span></div>
   <div class="about-grid">
     <p class="text reveal">
       I am an engineering student passionate about robotics, embedded systems, artificial intelligence, and emerging technologies.
@@ -165,6 +177,7 @@
   <div class="kicker reveal">03 · Toolkit</div>
   <h2 class="title reveal">Skills Galaxy <span class="zh">技能星球</span></h2>
 
+  <p class="skills-caption reveal">From lines of code<br>to things that move.<span class="zh">从代码出发，让想法运转。</span><small>HOVER TO EXPLORE THE GALAXY ↗</small></p>
   <div class="skills-orbit reveal">
     <div class="skill center">Engineering<br><span class="zh">工程</span></div>
     <div class="orbit">
@@ -188,7 +201,7 @@
   <div class="cards">
     <div class="card reveal">
       <h3>SAT</h3>
-      <p class="score">1550</p>
+      <p class="score" data-target="1550">1550</p>
       <p>Standardized Test <span class="zh">· 美国大学入学考试</span></p>
     </div>
 
@@ -200,7 +213,7 @@
 
     <div class="card reveal">
       <h3>Gaokao</h3>
-      <p class="score">687</p>
+      <p class="score" data-target="687">687</p>
       <p>National College Entrance Examination <span class="zh">· 中国高考成绩</span></p>
     </div>
   </div>
@@ -214,12 +227,16 @@
   <div class="cards">
 
     <div class="card project-card reveal">
+      <div class="project-visual weather-visual" aria-hidden="true"><span class="visual-index">01 / MARINE SAFETY</span><div class="signal-ring ring-a"></div><div class="signal-ring ring-b"></div><div class="signal-ring ring-c"></div><div class="alert-device"><span class="device-led"></span><span class="device-brand">WEATHER / ALERT</span><div class="device-button">↗</div><span class="device-port"></span><small>ESP32 + LoRa</small></div><span class="visual-caption">CONNECTED. WHEN IT MATTERS.</span><span class="visual-plus">+</span></div>
+      <div class="project-info"><span class="project-type">HARDWARE / IoT</span><span class="project-number">01</span></div>
       <div class="tags">ESP32 · LoRa · IoT</div>
       <h3>WeatherAlert Button</h3>
       <p>Marine emergency alert system.<br><span class="zh">海洋环境智能预警设备。</span></p>
     </div>
 
     <div class="card project-card reveal">
+      <div class="project-visual ocean-visual" aria-hidden="true"><span class="visual-index">02 / OCEAN INTELLIGENCE</span><div class="ocean-grid"></div><div class="globe"><img src="assets/ocean-globe.svg" width="360" height="360" alt="" loading="lazy"></div><span class="map-pin pin-one"></span><span class="map-pin pin-two"></span><span class="map-pin pin-three"></span><span class="visual-caption">ONE OCEAN. A SHARED FUTURE.</span><span class="visual-plus">+</span></div>
+      <div class="project-info"><span class="project-type">SOFTWARE / ENVIRONMENT</span><span class="project-number">02</span></div>
       <div class="tags">GIS · Web Development</div>
       <h3>Ocean Plastic Monitoring System</h3>
       <p>Global ocean pollution visualization platform.<br><span class="zh">全球海洋塑料污染可视化平台。</span></p>
@@ -330,6 +347,7 @@
   <div class="kicker reveal">08 · Say Hello</div>
   <h2 class="title reveal">Contact <span class="zh">联系</span></h2>
 
+  <p class="contact-statement reveal">Let’s build<br><span>what’s next.</span><span class="contact-asterisk" aria-hidden="true">✳</span></p>
   <div class="contact-grid reveal">
     <a class="contact-card" href="mailto:Chengjisong2026@163.com">
       <div class="contact-icon">
@@ -357,7 +375,9 @@
   </div>
 </section>
 
+</main>
 <footer>
+  <a class="footer-wordmark" href="#home">CHENGJI SONG<span>↗</span></a>
   <div class="footer-links">
     <a href="https://github.com/orca080125" target="_blank" rel="noopener" aria-label="GitHub">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
