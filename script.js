@@ -57,6 +57,56 @@
   const topButton = document.getElementById('toTop');
   const sections = [...document.querySelectorAll('section[id]')];
   const links = [...document.querySelectorAll('.nav-links a')];
+  // Sample the actual section beneath the glass, including its vertical gradient.
+  // No screenshot, duplicated page, or animation loop is needed: scroll already uses rAF.
+  const surfaceCache = new Map();
+  const rgb = value => (value.match(/[\d.]+/g) || []).map(Number);
+  const bodyColor = rgb(getComputedStyle(document.body).backgroundColor);
+  function surfaceAt(x, y) {
+    const underneath = document.elementsFromPoint(x, y).find(el =>
+      !nav.contains(el) && !el.closest('.progress-bar,.cursor-glow,.to-top,.glass-filter-defs'));
+    const section = underneath?.closest('section') || document.body;
+    let model = surfaceCache.get(section);
+    if (!model) {
+      const style = getComputedStyle(section);
+      const color = rgb(style.backgroundColor);
+      const alpha = color[3] ?? 1;
+      const base = bodyColor.slice(0, 3).map((v, i) => v * (1 - alpha) + color[i] * alpha);
+      const stops = style.backgroundImage.startsWith('linear-gradient(rgb') ||
+        style.backgroundImage.startsWith('linear-gradient(180deg')
+        ? [...style.backgroundImage.matchAll(/(rgba?\([^)]+\))\s+([\d.]+)%/g)]
+          .map(match => ({ color: rgb(match[1]), at: Number(match[2]) / 100 }))
+        : [];
+      model = { base, stops };
+      surfaceCache.set(section, model);
+    }
+    if (model.stops.length < 2) return model.base;
+    const bounds = section.getBoundingClientRect();
+    const at = Math.max(0, Math.min(1, (y - bounds.top) / bounds.height));
+    const next = model.stops.findIndex(stop => stop.at >= at);
+    if (next <= 0) return model.stops[next === 0 ? 0 : model.stops.length - 1].color;
+    const a = model.stops[next - 1], b = model.stops[next];
+    const t = (at - a.at) / (b.at - a.at);
+    return a.color.slice(0, 3).map((value, i) => value + (b.color[i] - value) * t);
+  }
+  function updateGlass(scroll) {
+    const bounds = nav.getBoundingClientRect();
+    let luminance = 0;
+    for (const x of [.2, .5, .8]) for (const y of [.25, .75]) {
+      const color = surfaceAt(innerWidth * x, bounds.top + bounds.height * y);
+      const linear = color.slice(0, 3).map(value => {
+        value /= 255;
+        return value <= .04045 ? value / 12.92 : Math.pow((value + .055) / 1.055, 2.4);
+      });
+      luminance += linear[0] * .2126 + linear[1] * .7152 + linear[2] * .0722;
+    }
+    luminance /= 6;
+    // Hysteresis avoids flickering near the light/dark gradient boundary.
+    const light = luminance > (nav.dataset.surface === 'light' ? .27 : .34);
+    nav.dataset.surface = light ? 'light' : 'dark';
+    nav.style.setProperty('--glass-shift', animated() ? `${50 + Math.sin(scroll / 480) * 48}%` : '50%');
+    nav.style.setProperty('--glass-drift', animated() ? `${Math.sin(scroll / 360) * .65}px` : '0px');
+  }
   let scrollPending = false;
   function updateScroll() {
     const scroll = window.scrollY;
@@ -74,6 +124,7 @@
       if (active) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
+    updateGlass(scroll);
     scrollPending = false;
   }
   function scheduleScroll() {
@@ -83,7 +134,8 @@
     }
   }
   window.addEventListener('scroll', scheduleScroll, { passive: true });
-  window.addEventListener('resize', scheduleScroll, { passive: true });
+  window.addEventListener('resize', () => { surfaceCache.clear(); scheduleScroll(); }, { passive: true });
+  reducedMotion.addEventListener('change', scheduleScroll);
   window.addEventListener('load', updateScroll);
   updateScroll();
   topButton.addEventListener('click', () => {

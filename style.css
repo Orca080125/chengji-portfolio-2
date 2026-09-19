@@ -2577,3 +2577,96 @@ footer {
     left:23%;
   }
 }
+
+/* Liquid glass: a sharp text plane above blurred, gently displaced scenery. */
+.glass-filter-defs {
+  position:absolute;
+  pointer-events:none;
+}
+nav,nav.scrolled {
+  --glass-tint:rgba(28,12,47,.46);
+  --glass-wash:rgba(167,139,250,.09);
+  --glass-text:#f5f3ff;
+  --glass-muted:#c8b8dc;
+  --glass-accent:#bca0ff;
+  --glass-edge:rgba(217,190,255,.25);
+  --glass-shift:50%;
+  --glass-drift:0px;
+  isolation:isolate;
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border-bottom:1px solid var(--glass-edge);
+  box-shadow:0 8px 28px rgba(5,0,13,.12);
+  color:var(--glass-text);
+  transition:height .3s,color .3s,border-color .3s;
+}
+nav[data-surface="light"] {
+  --glass-tint:rgba(215,198,241,.34);
+  --glass-wash:rgba(245,233,255,.14);
+  --glass-text:#28143e;
+  --glass-muted:#4e3665;
+  --glass-accent:#603496;
+  --glass-edge:rgba(245,229,255,.6);
+}
+nav::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:linear-gradient(120deg,var(--glass-wash),transparent 48%),var(--glass-tint);
+  -webkit-backdrop-filter:blur(22px) saturate(145%);
+  backdrop-filter:blur(22px) saturate(145%);
+  box-shadow:inset 0 1px 0 rgba(237,220,255,.12),inset 0 -1px 8px rgba(190,157,238,.06);
+  transition:background .35s;
+}
+nav .nav-refraction {
+  position:absolute;
+  inset:1px 0;
+  z-index:-1;
+  pointer-events:none;
+  overflow:hidden;
+  transform:translateX(var(--glass-drift));
+  /* SVG displacement is progressive enhancement; the blur plane remains on Safari. */
+  -webkit-backdrop-filter:blur(.7px);
+  backdrop-filter:blur(.7px);
+  background:linear-gradient(177deg,rgba(240,219,255,.065),transparent 25%,transparent 80%,rgba(183,151,226,.04));
+}
+@supports(backdrop-filter:url('#liquid-nav-refraction')) {
+  nav .nav-refraction { backdrop-filter:url('#liquid-nav-refraction') blur(.7px); }
+}
+nav::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(110deg,transparent 20%,rgba(231,209,255,.12) 35%,rgba(248,236,255,.8) 50%,rgba(193,156,243,.22) 62%,transparent 80%) var(--glass-shift) top / 240% 1px no-repeat,
+    linear-gradient(75deg,transparent 20%,rgba(194,159,243,.16) 35%,rgba(241,222,255,.7) 50%,transparent 72%) calc(100% - var(--glass-shift)) bottom / 210% 1px no-repeat;
+}
+nav .logo,nav .nav-links { position:relative; z-index:2; }
+nav .logo,nav .nav-links a.active,nav .nav-links a:hover,nav .nav-links a:last-child {
+  color:var(--glass-text);
+}
+nav .nav-links a { color:var(--glass-muted); }
+nav .nav-links a.active,nav .nav-links a:hover { color:var(--glass-text); }
+nav .logo-mark,nav .logo-dot { color:var(--glass-accent); }
+nav .nav-links a::after { background:var(--glass-accent); }
+nav .nav-links a:last-child { border-color:var(--glass-edge); }
+nav :focus-visible { outline-color:var(--glass-accent); }
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  nav,nav.scrolled { --glass-tint:rgba(20,0,33,.94); }
+  nav[data-surface="light"] { --glass-tint:rgba(214,198,237,.96); }
+}
+@media(prefers-reduced-transparency:reduce) {
+  nav,nav.scrolled { --glass-tint:rgba(20,0,33,.96); }
+  nav[data-surface="light"] { --glass-tint:rgba(214,198,237,.98); }
+  nav::before,nav .nav-refraction { -webkit-backdrop-filter:none; backdrop-filter:none; }
+}
+
+/* The always-visible directory must not inherit the old dropdown offset. */
+nav .nav-links {
+  inset:auto;
+}

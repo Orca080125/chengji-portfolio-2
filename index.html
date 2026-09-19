@@ -24,7 +24,9 @@
 
 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-<nav>
+<svg class="glass-filter-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0"><defs><filter id="liquid-nav-refraction" x="-5%" y="-10%" width="110%" height="120%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.065" numOctaves="1" seed="8" result="ripple"/><feDisplacementMap in="SourceGraphic" in2="ripple" scale="4" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+<nav aria-label="Main navigation">
+  <span class="nav-refraction" aria-hidden="true"></span>
   <a class="logo" href="#home" aria-label="Chengji Song — Home"><span class="logo-mark" aria-hidden="true"><svg class="brand-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M49 14 32 5 10 18v28l22 13 17-9"/><path d="M45 22H28l-7 7 22 7-7 7H21"/></svg></span> Chengji Song<span class="logo-dot">.</span></a>
 
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
