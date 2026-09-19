@@ -2568,3 +2568,12 @@ footer {
   .project-card:hover,.project-card:focus-within,
   .leadership-card:hover,.leadership-card:focus-within { scale:1; }
 }
+
+/* Keep the figure caption separate from the bilingual motto on wide layouts. */
+@media(min-width:641px) {
+  .hero-object .object-label {
+    top:3%;
+    bottom:auto;
+    left:23%;
+  }
+}
