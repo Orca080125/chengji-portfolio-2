@@ -2670,3 +2670,40 @@ nav :focus-visible { outline-color:var(--glass-accent); }
 nav .nav-links {
   inset:auto;
 }
+
+
+/* Publication detail within the Dalian Maritime University research card. */
+#research .publication-entry {
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.publication-label {
+  margin-bottom:12px;
+  font-family:var(--font-display);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--lilac);
+}
+.publication-entry h5 {
+  max-width:720px;
+  font-family:var(--font-display);
+  font-size:clamp(18px,1.7vw,23px);
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:-.02em;
+}
+.publication-meta {
+  margin-top:10px;
+  font-size:11px;
+  line-height:1.7;
+  color:var(--text-muted);
+}
+.publication-doi {
+  margin-top:12px;
+  font-size:10px;
+  line-height:1.6;
+  color:var(--text-muted);
+  overflow-wrap:anywhere;
+}
